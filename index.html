@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat yaaaa</title>
+  <!-- Mengimpor font Baloo Paaji, Open Sans, Scriptify, dan Math Italic -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i|Script+Kursiv|STIX+Two+Math" rel="stylesheet">
+  <style>
+    /* Gaya Umum Halaman */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Latar belakang */
+    /* Latar belakang dengan warna Galaxy */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92, #7b1fa2, #4b0082);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  overflow: hidden;
+  padding: 50px 20px;
+}
+
+
+    /* Tombol */
+    .play-button {
+      font-size: 1.1em; /* Ukuran font tombol lebih kecil */
+      background-color: #fff;
+      color: #333;
+      padding: 8px 20px; /* Padding tombol lebih kecil */
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .play-button:hover {
+      transform: translateX(-50%) scale(1.1);
+      background-color: #ffcc80;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Judul */
+    h3 {
+      font-family: 'Baloo Paaji', cursive;
+      font-size: 3em;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraf */
+    p {
+      font-family: 'Script Kursiv', cursive;
+      font-size: 1.3em;
+      line-height: 1.8;
+      color: white;
+      max-width: 700px;
+      margin: 15px auto;
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+      padding: 0 20px;
+    }
+
+    /* Bingkai untuk kutipan */
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .quote {
+      margin-top: 25px;
+      padding: 20px 25px;
+      border: 2px dashed white;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1.2em;
+      line-height: 2;
+      color: white;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.2);
+      animation: pulseGlow 2.5s infinite;
+    }
+
+    /* Teks di bawah bingkai */
+    .quote-footer {
+      margin-top: 25px;
+      font-family: 'STIX Two Math', serif;
+      font-size: 1.3em;
+      line-height: 2;
+      color: white;
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+      padding: 0 20px;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Tombol Play Musik -->
+  <button class="play-button" onclick="playMusic()">Play Musik</button>
+
+  <!-- Konten Ucapan -->
+  <div>
+    <h3>Haiiiii Ristiaaa</h3>
+    <p>pw ws ndeleng hasil rapote? sesuai ra ekpektasi ra?. hehehehe aja kelalen misal pan buka kadone di vidoe yaaa,nyg juga pan ndleng soale :v</p>
+
+    <!-- Kutipan Inspiratif -->
+    <div class="quote">
+      <p>"Di perjalanan yang panjang ini, jangan jadi milik siapapun dulu, ya?"</p>
+      <p>- 3726 MDPL</p>
+      <p>nyg bakal inget terusss kokkk, hwhehehehehehe</p>
+    </div>
+
+    <!-- Teks tambahan di bawah bingkai -->
+    <div class="quote-footer">
+      "kpw? ingin pan ngeragukan karo awake ko dwk? Kan nyg ws ngomong aja ragu misal ko pan ulih apa sing ko pengin karo aja apa² langsung ngomong ra tyng urung juga di jajal kan. Ya ws lah paling kek ngono tokk, semangat yaa ngejalani kabehan tantangan..."<br>20-12-2024
+    </div>
+  </div>
+
+  <!-- Musik -->
+  <audio id="backgroundMusic" loop>
+    <source src="https://j.top4top.io/m_32641tqyz0.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutar audio.
+  </audio>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById('backgroundMusic');
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+</body>
+
+    </html>
+    
