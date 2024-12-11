@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Selamat yaaaa</title>
-  <!-- Mengimpor font Baloo Paaji, Open Sans, Scriptify, dan Math Italic -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i|Script+Kursiv|STIX+Two+Math" rel="stylesheet">
   <style>
     /* Gaya Umum Halaman */
@@ -15,27 +14,67 @@
       box-sizing: border-box;
     }
 
-    /* Latar belakang */
-    /* Latar belakang dengan warna Galaxy */
-body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #000428, #004e92, #7b1fa2, #4b0082);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  overflow: hidden;
-  padding: 50px 20px;
-}
+    /* Latar belakang Galaxy */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #000428, #004e92, #7b1fa2, #4b0082);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+    }
 
+    /* Efek Bintang */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Generate bintang secara acak */
+    .stars .star:nth-child(1) { top: 10%; left: 15%; animation-duration: 2s; }
+    .stars .star:nth-child(2) { top: 20%; left: 30%; animation-duration: 3s; }
+    .stars .star:nth-child(3) { top: 30%; left: 50%; animation-duration: 1.5s; }
+    .stars .star:nth-child(4) { top: 40%; left: 70%; animation-duration: 2.5s; }
+    .stars .star:nth-child(5) { top: 50%; left: 20%; animation-duration: 3s; }
+    .stars .star:nth-child(6) { top: 60%; left: 40%; animation-duration: 1.8s; }
+    .stars .star:nth-child(7) { top: 70%; left: 10%; animation-duration: 2.3s; }
+    .stars .star:nth-child(8) { top: 80%; left: 60%; animation-duration: 1.9s; }
+    .stars .star:nth-child(9) { top: 90%; left: 80%; animation-duration: 2.7s; }
+    .stars .star:nth-child(10) { top: 5%; left: 90%; animation-duration: 1.6s; }
 
     /* Tombol */
     .play-button {
-      font-size: 1.1em; /* Ukuran font tombol lebih kecil */
+      font-size: 1.1em;
       background-color: #fff;
       color: #333;
-      padding: 8px 20px; /* Padding tombol lebih kecil */
+      padding: 8px 20px;
       border: none;
       border-radius: 20px;
       cursor: pointer;
@@ -65,7 +104,7 @@ body {
     /* Paragraf */
     p {
       font-family: 'Script Kursiv', cursive;
-      font-size: 1.3em;
+      font-size: 1em;
       line-height: 1.8;
       color: white;
       max-width: 700px;
@@ -75,24 +114,9 @@ body {
     }
 
     /* Bingkai untuk kutipan */
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        border-color: rgba(255, 255, 255, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-        border-color: rgba(255, 255, 255, 0.8);
-      }
-      100% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        border-color: rgba(255, 255, 255, 0.5);
-      }
-    }
-
     .quote {
-      margin-top: 25px;
-      padding: 20px 25px;
+      margin-top: 15px;
+      padding: 10px 15px;
       border: 2px dashed white;
       border-radius: 10px;
       font-family: monospace;
@@ -100,11 +124,15 @@ body {
       line-height: 2;
       color: white;
       max-width: 600px;
-      background: rgba(255, 255, 255, 0.2);
-      animation: pulseGlow 2.5s infinite;
+      background: rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
     }
 
-    /* Teks di bawah bingkai */
+    .quote:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
     .quote-footer {
       margin-top: 25px;
       font-family: 'STIX Two Math', serif;
@@ -116,30 +144,92 @@ body {
       max-width: 700px;
       margin: 20px auto;
     }
+
+    /* Form Ucapan */
+    .form-ucapan {
+      margin-top: 30px;
+    }
+
+    .form-ucapan input,
+    .form-ucapan button {
+      font-size: 1em;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin: 5px;
+    }
+
+    .form-ucapan input {
+      width: 200px;
+    }
+
+    .form-ucapan button {
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-ucapan button:hover {
+      background-color: #ffcc80;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Pesan Terkirim */
+    .pesan-terkirim {
+      margin-top: 20px;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Efek Bintang -->
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
   <!-- Tombol Play Musik -->
   <button class="play-button" onclick="playMusic()">Play Musik</button>
 
   <!-- Konten Ucapan -->
   <div>
     <h3>Haiiiii Ristiaaa</h3>
-    <p>pw ws ndeleng hasil rapote? sesuai ra ekpektasi ra?. hehehehe aja kelalen misal pan buka kadone di vidoe yaaa,nyg juga pan ndleng soale :v</p>
+    <p>pw ws ndeleng hasil rapote? sesuai ra ekspektasi ra?. Hehehehe aja kelalen misal pan buka kadone di vidoe yaaa, nyg juga pan ndeleng soale :v</p>
 
     <!-- Kutipan Inspiratif -->
     <div class="quote">
       <p>"Di perjalanan yang panjang ini, jangan jadi milik siapapun dulu, ya?"</p>
       <p>- 3726 MDPL</p>
       <p>nyg bakal inget terusss kokkk, hwhehehehehehe</p>
+      <p>oh iya,makasih ya tahun iki ws mbatiri nyg hehehehe. makasih banget intinya,ga tau lagi ngomong apa. yaudah itu aja...</p>
     </div>
 
     <!-- Teks tambahan di bawah bingkai -->
     <div class="quote-footer">
-      "kpw? ingin pan ngeragukan karo awake ko dwk? Kan nyg ws ngomong aja ragu misal ko pan ulih apa sing ko pengin karo aja apa² langsung ngomong ra tyng urung juga di jajal kan. Ya ws lah paling kek ngono tokk, semangat yaa ngejalani kabehan tantangan..."<br>20-12-2024
+      "kpw? ingin pan ngeragukan karo awake ko dwk? Kan nyg ws ngomong aja ragu misal ko pan ulih apa sing ko pengin karo aja apa² langsung ngomong ra tyng urung juga di jajal kan. Ya ws lah paling kek ngono tokk, semangat yaa ngejalani kabehan tantangan..."<br> 20-12-2024
     </div>
   </div>
+
+  <!-- Form Ucapan -->
+  <div class="form-ucapan">
+    <input type="text" id="nama" placeholder="Nama Anda" />
+    <input type="text" id="pesan" placeholder="Pesan Anda" />
+    <button onclick="kirimUcapan()">Kirim</button>
+  </div>
+
+  <!-- Pesan Terkirim -->
+  <div class="pesan-terkirim" id="pesanTerkirim"></div>
 
   <!-- Musik -->
   <audio id="backgroundMusic" loop>
@@ -156,8 +246,20 @@ body {
         music.pause();
       }
     }
+
+    function kirimUcapan() {
+      const nama = document.getElementById('nama').value;
+      const pesan = document.getElementById('pesan').value;
+      if (nama && pesan) {
+        const pesanTerkirim = document.getElementById('pesanTerkirim');
+        pesanTerkirim.innerHTML += `<p><b>${nama}:</b> ${pesan}</p>`;
+        document.getElementById('nama').value = '';
+        document.getElementById('pesan').value = '';
+      } else {
+        alert('Isi nama dan pesan dulu ya!');
+      }
+    }
   </script>
 </body>
 
-    </html>
-    
+</html>
